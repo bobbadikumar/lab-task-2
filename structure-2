@@ -1,0 +1,57 @@
+#include <stdio.h>
+struct Car {
+    int carID;
+    char model[50];
+    float rentalRatePerDay;
+};
+int main() {
+    struct Car car1, car2, car3;
+    int rentalDays;
+    float totalCost1, totalCost2, totalCost3;
+
+    printf("Enter details for the first car:\n");
+    printf("Car ID: ");
+    scanf("%d", &car1.carID);
+    getchar();  
+    printf("Model: ");
+    fgets(car1.model, sizeof(car1.model), stdin);
+    printf("Rental Rate per Day: ");
+    scanf("%f", &car1.rentalRatePerDay);
+
+    printf("\nEnter details for the second car:\n");
+    printf("Car ID: ");
+    scanf("%d", &car2.carID);
+    getchar(); 
+    printf("Model: ");
+    fgets(car2.model, sizeof(car2.model), stdin);
+    printf("Rental Rate per Day: ");
+    scanf("%f", &car2.rentalRatePerDay);
+
+    printf("\nEnter details for the third car:\n");
+    printf("Car ID: ");
+    scanf("%d", &car3.carID);
+    getchar();  
+    printf("Model: ");
+    fgets(car3.model, sizeof(car3.model), stdin);
+    printf("Rental Rate per Day: ");
+    scanf("%f", &car3.rentalRatePerDay);
+
+    printf("\nEnter the number of rental days: ");
+    scanf("%d", &rentalDays);
+
+    totalCost1 = car1.rentalRatePerDay * rentalDays;
+    totalCost2 = car2.rentalRatePerDay * rentalDays;
+    totalCost3 = car3.rentalRatePerDay * rentalDays;
+
+    printf("\nRental Details for the Cars:\n");
+    printf("\nCar 1: ID = %d, Model = %sRental Rate per Day = %.2f\n", car1.carID, car1.model, car1.rentalRatePerDay);
+    printf("Total Rental Cost for %d days: %.2f\n", rentalDays, totalCost1);
+
+    printf("\nCar 2: ID = %d, Model = %sRental Rate per Day = %.2f\n", car2.carID, car2.model, car2.rentalRatePerDay);
+    printf("Total Rental Cost for %d days: %.2f\n", rentalDays, totalCost2);
+
+    printf("\nCar 3: ID = %d, Model = %sRental Rate per Day = %.2f\n", car3.carID, car3.model, car3.rentalRatePerDay);
+    printf("Total Rental Cost for %d days: %.2f\n", rentalDays, totalCost3);
+
+    return 0;
+}
